@@ -38,15 +38,17 @@ Clips will be segmented into 10–30 seconds, and standard audio augmentations (
 4. Transfer: pretrain on Genre → finetune Emotion  
 
 ### Evaluation Metrics
-- **Genre**: Accuracy, Macro-F1, Confusion Matrix  
-- **Emotion (categorical)**: Macro-F1, ROC-AUC  
-- **Emotion (AV regression)**: RMSE, CCC
-- - **Genre**: Accuracy, Macro-F1, Confusion Matrix  
+- **Genre**:  
+  - Metrics: Accuracy, Macro-F1, Confusion Matrix  
   - *Rationale*: Accuracy measures overall performance, while Macro-F1 addresses potential class imbalance across genres.
-- **Emotion (categorical)**: Macro-F1, ROC-AUC  
-  *Rationale*: F1 balances precision and recall, and ROC-AUC evaluates classifier robustness across thresholds.
-- **Emotion (AV regression)**: RMSE, CCC  
-  *Rationale*: RMSE reflects prediction error magnitude, while Concordance Correlation Coefficient (CCC) captures both correlation and scale agreement with ground truth.
+
+- **Emotion (categorical)**:  
+  - Metrics: Macro-F1, ROC-AUC  
+  - *Rationale*: F1 balances precision and recall, and ROC-AUC evaluates classifier robustness across thresholds.
+
+- **Emotion (AV regression)**:  
+  - Metrics: RMSE, CCC  
+  - *Rationale*: RMSE reflects prediction error magnitude, while Concordance Correlation Coefficient (CCC) captures both correlation and scale agreement with ground truth.
 
 
 ### Deliverables
