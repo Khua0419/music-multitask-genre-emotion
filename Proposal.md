@@ -14,20 +14,20 @@
 ---
 
 ## 3. Project Overview  
-This project explores whether multi-task learning with late-fusion features can improve both music genre classification and music emotion recognition compared to single-task baselines. The problem addressed is that existing systems typically treat genre and emotion as independent tasks, which limits their ability to capture the shared representations underlying musical perception.  
+This project explores whether multi-task learning with late-fusion features can improve both music genre classification and music emotion recognition compared to single-task baselines. The problem addressed is that existing systems typically treat genre and emotion as independent tasks, which limits their ability to capture the shared representations underlying musical perception.
 
-The project is important because genre and emotion are two of the most commonly used descriptors in music information retrieval (MIR). An integrated system that leverages their correlation could enable better music recommendation, emotion-aware applications, and affective computing.  
+The project is important because genre and emotion are two of the most commonly used descriptors in music information retrieval (MIR). An integrated system that leverages their correlation could enable better music recommendation, emotion-aware applications, and affective computing.
 
 Our proposed solution is to design a multi-task learning framework with a shared feature extractor and two task-specific output heads (genre and emotion). We will further incorporate late fusion of multiple acoustic features (Mel-spectrograms, MFCC, and Chroma) to investigate whether combining complementary representations can improve robustness and accuracy.  
 
 ---
 
 ## 4. Background and Motivation  
-Previous studies in MIR have shown that both genre classification (Tzanetakis & Cook, 2002) and music emotion recognition (Aljanaki et al., 2017) are feasible using deep learning models. However, most research treats these problems separately. In reality, genre and emotion are correlated but not identical descriptors of music.  
+Previous research has demonstrated that both music genre classification (Tzanetakis & Cook, 2002) and music emotion recognition (Aljanaki et al., 2017) are feasible using deep learning techniques. However, most studies have investigated them separately. Since genre and emotion are related but not identical descriptors, there may be value in exploring them jointly.
 
-Recent advances in multi-task learning and feature fusion (Choi et al., 2017; Zhang et al., 2022) suggest that leveraging shared representations across tasks can lead to improved generalization. This motivates us to investigate a joint framework that integrates both genre and emotion recognition.  
+Recent developments in multi-task learning and feature fusion (Choi et al., 2017; Zhang et al., 2022) suggest that shared feature representations can sometimes improve generalization across tasks. This project will attempt to apply those ideas in the music domain, focusing on relatively small and well-known datasets.
 
-I chose this topic because it combines my interest in audio signal processing, machine learning, and affective computing, and it builds directly on the starter codes provided in the course (speech recognition, keyword spotting, late fusion, and speech emotion recognition).  
+As our project, the aim is not to achieve state-of-the-art results, but rather to learn from existing methods, implement a working prototype, and evaluate whether multi-task and late-fusion strategies offer advantages compared to single-task baselines.  
 
 ---
 
@@ -61,11 +61,11 @@ I chose this topic because it combines my interest in audio signal processing, m
 
 | Week | Task |
 |------|------|
-| 6–7  | Literature review, dataset collection (GTZAN, DEAM), and feature extraction pipeline setup |
-| 8–9  | Implement single-task baselines (genre CNN/CRNN; emotion CNN/CRNN) and evaluate performance |
-| 10–11| Develop and test the multi-task framework; experiment with different loss weights (λ) |
-| 12   | Implement late-fusion experiments (Mel, MFCC, Chroma) and compare with baselines |
-| 13   | Final report writing, GitHub documentation, and demo video preparation |
+| 6–7  | Conduct literature review; collect GTZAN and DEAM datasets; set up feature extraction pipeline |
+| 8–9  | Implement single-task baselines (genre CNN/CRNN; emotion CNN/CRNN) and evaluate initial results |
+| 10–11| Develop and test the multi-task framework; experiment with different loss weightings (λ) |
+| 12   | Explore late-fusion strategies (Mel, MFCC, Chroma) and compare with baseline models |
+| 13   | Finalize report, update GitHub documentation, and prepare demo video |
 
 ---
 
@@ -76,4 +76,3 @@ I chose this topic because it combines my interest in audio signal processing, m
 - Zhang, S., Xu, H., & Yang, Y.-H. (2022). Music emotion recognition: A survey of datasets, features, and methods. *IEEE Transactions on Affective Computing, 13*(4), 2019–2036. https://doi.org/10.1109/TAFFC.2020.2981442  
 
 ---
-
