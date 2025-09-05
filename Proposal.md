@@ -6,7 +6,7 @@
 ---
 
 ## 2. Student Information  
-- **Full Name**: Huang Kejia (黄珂嘉)  
+- **Full Name**: Kejia Huanng  
 - **Student ID (SID)**: 540373974  
 - **GitHub Username**: Khua0419  
 - **GitHub Project Link**: [GitHub Repository](https://github.com/Khua0419/music-multitask-genre-emotion/tree/main)  
