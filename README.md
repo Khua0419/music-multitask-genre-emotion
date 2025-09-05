@@ -42,7 +42,7 @@ Clips will be segmented into 10–30 seconds, and standard audio augmentations (
 - **Emotion (categorical)**: Macro-F1, ROC-AUC  
 - **Emotion (AV regression)**: RMSE, CCC
 - - **Genre**: Accuracy, Macro-F1, Confusion Matrix  
-  *Rationale*: Accuracy measures overall performance, while Macro-F1 addresses potential class imbalance across genres.
+  - *Rationale*: Accuracy measures overall performance, while Macro-F1 addresses potential class imbalance across genres.
 - **Emotion (categorical)**: Macro-F1, ROC-AUC  
   *Rationale*: F1 balances precision and recall, and ROC-AUC evaluates classifier robustness across thresholds.
 - **Emotion (AV regression)**: RMSE, CCC  
