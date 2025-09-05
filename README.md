@@ -5,6 +5,7 @@
 ### Goal
 Build one model that predicts **music genre** (multi-class) and **music emotion** (categorical or arousal–valence) from audio.  
 We will compare **single-task vs multi-task** training and evaluate **feature/model late fusion**.
+**Research Question**: Can multi-task learning with late fusion improve both genre classification and emotion recognition compared to single-task baselines?
 
 ### Why It Matters
 Genre and emotion are correlated yet distinct descriptors.  
@@ -13,7 +14,11 @@ This has practical value for music recommendation, emotion-aware applications, a
 
 ### Datasets
 - **GTZAN** (10 genres) for Music Genre Classification (MGC).  
-- **DEAM / EmoMusic** for Music Emotion Recognition (MER).  
+- **DEAM / EmoMusic** for Music Emotion Recognition (MER).
+- **GTZAN**: Contains 1,000 audio tracks (~30s each), evenly distributed across 10 genres (100 tracks per genre).  
+**DEAM / EmoMusic**: Contains ~1,500 songs with continuous or categorical emotion annotations (arousal–valence or discrete classes).  
+
+These datasets are widely used in Music Information Retrieval (MIR) research and provide a standard benchmark for reproducibility.
 
 Clips will be segmented into 10–30 seconds, and standard audio augmentations (gain, time-shift, SpecAugment, noise mixing) will be applied.
 
@@ -35,7 +40,14 @@ Clips will be segmented into 10–30 seconds, and standard audio augmentations (
 ### Evaluation Metrics
 - **Genre**: Accuracy, Macro-F1, Confusion Matrix  
 - **Emotion (categorical)**: Macro-F1, ROC-AUC  
+- **Emotion (AV regression)**: RMSE, CCC
+- - **Genre**: Accuracy, Macro-F1, Confusion Matrix  
+  *Rationale*: Accuracy measures overall performance, while Macro-F1 addresses potential class imbalance across genres.
+- **Emotion (categorical)**: Macro-F1, ROC-AUC  
+  *Rationale*: F1 balances precision and recall, and ROC-AUC evaluates classifier robustness across thresholds.
 - **Emotion (AV regression)**: RMSE, CCC  
+  *Rationale*: RMSE reflects prediction error magnitude, while Concordance Correlation Coefficient (CCC) captures both correlation and scale agreement with ground truth.
+
 
 ### Deliverables
 - Reproducible code on GitHub (with requirements and scripts)  
