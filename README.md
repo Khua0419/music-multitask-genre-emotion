@@ -60,3 +60,13 @@ Clips will be segmented into 10–30 seconds, and standard audio augmentations (
 > This repository currently serves as the **Project Proposal submission (Feedback One)**.  
 > It contains the project idea, dataset plan, method design, evaluation metrics, and experiment roadmap.  
 > Feedback from teaching staff will guide dataset balance, fusion strategy, and metric choices.
+
+## References
+
+Tzanetakis, G., & Cook, P. (2002). Musical genre classification of audio signals. *IEEE Transactions on Speech and Audio Processing, 10*(5), 293–302. https://doi.org/10.1109/TSA.2002.800560  
+
+Aljanaki, A., Yang, Y.-H., & Soleymani, M. (2017). Developing a benchmark for emotional analysis of music. *PLoS ONE, 12*(3), e0173392. https://doi.org/10.1371/journal.pone.0173392  
+
+Choi, K., Fazekas, G., Sandler, M., & Cho, K. (2017). Convolutional recurrent neural networks for music classification. In *2017 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)* (pp. 2392–2396). IEEE. https://doi.org/10.1109/ICASSP.2017.7952585  
+
+Zhang, S., Xu, H., & Yang, Y.-H. (2022). Music emotion recognition: A survey of datasets, features, and methods. *IEEE Transactions on Affective Computing, 13*(4), 2019–2036. https://doi.org/10.1109/TAFFC.2020.2981442 
