@@ -58,4 +58,23 @@ We verified the end-to-end pipeline using 3 tiny dummy clips arranged as GTZAN-l
 
 These numbers are expected for a 3-sample toy set; the goal of this step is just to confirm the data → features → training → evaluation loop works before switching to real datasets (GTZAN/DEAM).
 
+### Preliminary results — plots
+
+**Genre-only baseline**
+- Acc/F1 learning curve  
+  ![genre_curve](experiments/logs/genre_curve.png)
+- Confusion matrix  
+  ![genre_confmat](experiments/logs/genre_confmat.png)
+
+**Emotion-only baseline**
+- RMSE (valence/arousal) learning curve  
+  ![emotion_curve](experiments/logs/emotion_curve.png)
+
+**Multi-task (GTZAN + DEAM, alternating batches)**
+- Acc/F1/RMSE combined curves  
+  ![mtl_curve](experiments/logs/mtl_curve.png)
+
+> Notes: Current results are from tiny dummy data (for pipeline verification). We will replace with real GTZAN/DEAM runs (5–10 epochs) and report Acc/F1 (genre) and RMSE(V/A) (emotion), plus ablations (single-task vs multi-task; single feature vs late fusion).
+
+
 
