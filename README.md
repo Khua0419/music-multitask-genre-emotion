@@ -52,12 +52,14 @@ We verified the end-to-end pipeline using 3 tiny dummy clips arranged as GTZAN-l
 
 - **Genre-only baseline:** ran for 3 epochs with a tiny batch; logs looked like:
 
+```
 [Genre|Epoch 1] acc=0.000 f1=0.000
 [Genre|Epoch 2] acc=0.000 f1=0.000
 [Genre|Epoch 3] acc=0.000 f1=0.000
 ```
-These numbers are expected for a 3-sample toy set; the goal of this step is just to confirm the data → features → training → evaluation loop works before switching to real datasets (GTZAN/DEAM).
 ```
+These numbers are expected for a 3-sample toy set; the goal of this step is just to confirm the data → features → training → evaluation loop works before switching to real datasets (GTZAN/DEAM).
+
 ### Preliminary results — plots
 
 **Genre-only baseline**  
@@ -74,5 +76,3 @@ RMSE (valence/arousal) learning curve
 **Multi-task (GTZAN + DEAM, alternating batches)**  
 Acc/F1/RMSE combined curves  
 ![mtl_curve](experiments/logs/mtl_curve.png)
-
-
