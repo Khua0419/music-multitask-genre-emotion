@@ -209,3 +209,12 @@ __marimo__/
 # project-specific
 data/
 experiments/checkpoints/
+# data
+data/**
+!data/lists/**
+# checkpoints
+experiments/checkpoints/**
+# Python cache
+__pycache__/
+*.pyc
+

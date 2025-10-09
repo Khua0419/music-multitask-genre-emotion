@@ -1,0 +1,10 @@
+{
+  "train_items": "data/lists/train_items.json",
+  "val_items":   "data/lists/val_items.json",
+  "num_genres": 3,
+  "lr": 0.001,
+  "bs": 2,
+  "epochs": 2,
+  "lam_genre": 1.0,
+  "lam_emo": 1.0
+}

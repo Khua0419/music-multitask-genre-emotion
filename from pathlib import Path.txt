@@ -1,0 +1,18 @@
+from pathlib import Path
+import json, numpy as np, soundfile as sf
+
+# 生成 3 个很短的纯音+噪声音频，并写出训练/验证清单
+root = Path("data/dummy"); (root/"wav").mkdir(parents=True, exist_ok=True)
+sr = 22050; t = np.arange(int(sr*2.0))/sr
+def tone(f): return 0.2*np.sin(2*np.pi*f*t).astype(np.float32)
+
+items = []
+for i,(f,genre,va) in enumerate([(220,0,[0.2,0.3]), (440,1,[0.6,0.4]), (330,2,[0.4,0.7])]):
+    x = tone(f) + 0.05*np.random.randn(t.size).astype(np.float32)
+    p = root/"wav"/f"ex{i}.wav"; sf.write(p, x, sr)
+    items.append({"wav": str(p.as_posix()), "genre": genre, "emotion": va})
+
+Path("data/lists").mkdir(parents=True, exist_ok=True)
+Path("data/lists/train_items.json").write_text(json.dumps(items[:2], indent=2), encoding="utf-8")
+Path("data/lists/val_items.json").write_text(json.dumps(items[2:], indent=2), encoding="utf-8")
+print("Dummy data ready at data/lists/")
