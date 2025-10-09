@@ -34,6 +34,19 @@ python scripts/make\_tiny\_dummy.py
 
 python -m experiments.train\_multitask --cfg experiments/configs/mtl\_deam\_gtzan.json
 ### Preliminary results (smoke test)
+#### More smoke tests
+
+- **Emotion-only baseline (RMSE, dummy DEAM):**
+[Emotion|Epoch 1] rmse(V)=0.412 rmse(A)=0.097
+[Emotion|Epoch 2] rmse(V)=0.786 rmse(A)=0.147
+[Emotion|Epoch 3] rmse(V)=1.086 rmse(A)=0.212
+
+- **Multi-task (GTZAN + DEAM, alternating batches):**
+[MTL|Epoch 1] acc=0.000 f1=0.000 rmse(V)=0.108 rmse(A)=0.666
+[MTL|Epoch 2] acc=0.000 f1=0.000 rmse(V)=0.013 rmse(A)=0.598
+[MTL|Epoch 3] acc=0.000 f1=0.000 rmse(V)=0.080 rmse(A)=0.526
+
+_(Numbers are from tiny dummy data, just to verify the pipeline. We'll replace them with real GTZAN/DEAM results next.)_
 
 We verified the end-to-end pipeline using 3 tiny dummy clips arranged as GTZAN-like folders.
 
