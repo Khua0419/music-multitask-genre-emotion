@@ -1,0 +1,258 @@
+[
+  {
+    "wav": "data/GTZAN_raw/blues/blues.00023.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "wav": "data/GTZAN_raw/blues/blues.00008.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "wav": "data/GTZAN_raw/blues/blues.00011.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "wav": "data/GTZAN_raw/blues/blues.00007.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "wav": "data/GTZAN_raw/classical/classical.00077.wav",
+    "genre": 1,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "wav": "data/GTZAN_raw/classical/classical.00022.wav",
+    "genre": 1,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "wav": "data/GTZAN_raw/classical/classical.00091.wav",
+    "genre": 1,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "wav": "data/GTZAN_raw/classical/classical.00033.wav",
+    "genre": 1,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "wav": "data/GTZAN_raw/country/country.00069.wav",
+    "genre": 2,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "wav": "data/GTZAN_raw/country/country.00004.wav",
+    "genre": 2,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "wav": "data/GTZAN_raw/country/country.00011.wav",
+    "genre": 2,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "wav": "data/GTZAN_raw/country/country.00073.wav",
+    "genre": 2,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "wav": "data/GTZAN_raw/disco/disco.00030.wav",
+    "genre": 3,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "wav": "data/GTZAN_raw/disco/disco.00028.wav",
+    "genre": 3,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "wav": "data/GTZAN_raw/disco/disco.00048.wav",
+    "genre": 3,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "wav": "data/GTZAN_raw/disco/disco.00090.wav",
+    "genre": 3,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "wav": "data/GTZAN_raw/hiphop/hiphop.00032.wav",
+    "genre": 4,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "wav": "data/GTZAN_raw/hiphop/hiphop.00047.wav",
+    "genre": 4,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "wav": "data/GTZAN_raw/hiphop/hiphop.00003.wav",
+    "genre": 4,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "wav": "data/GTZAN_raw/hiphop/hiphop.00070.wav",
+    "genre": 4,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "wav": "data/GTZAN_raw/jazz/jazz.00098.wav",
+    "genre": 5,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "wav": "data/GTZAN_raw/jazz/jazz.00023.wav",
+    "genre": 5,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "wav": "data/GTZAN_raw/jazz/jazz.00069.wav",
+    "genre": 5,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "wav": "data/GTZAN_raw/jazz/jazz.00033.wav",
+    "genre": 5,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "wav": "data/GTZAN_raw/metal/metal.00012.wav",
+    "genre": 6,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "wav": "data/GTZAN_raw/metal/metal.00023.wav",
+    "genre": 6,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "wav": "data/GTZAN_raw/metal/metal.00089.wav",
+    "genre": 6,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "wav": "data/GTZAN_raw/metal/metal.00008.wav",
+    "genre": 6,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "wav": "data/GTZAN_raw/pop/pop.00094.wav",
+    "genre": 7,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "wav": "data/GTZAN_raw/pop/pop.00033.wav",
+    "genre": 7,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "wav": "data/GTZAN_raw/pop/pop.00028.wav",
+    "genre": 7,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "wav": "data/GTZAN_raw/pop/pop.00057.wav",
+    "genre": 7,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  }
+]

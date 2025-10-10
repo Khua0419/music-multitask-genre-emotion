@@ -206,15 +206,24 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
-# project-specific
-data/
-experiments/checkpoints/
-# data
-data/**
+# project-specific (clean)
+
+# === Raw audio (do NOT commit) ===
+data/GTZAN_raw/**
+data/DEAM_raw/**
+data/**/*.wav
+
+# Keep lists and small metadata under data
 !data/lists/**
-# checkpoints
+!data/**/*.json
+!data/**/*.txt
+
+# === Checkpoints (large) ===
 experiments/checkpoints/**
-# Python cache
+
+# (Keep logs & result images so they show up in README)
+# experiments/logs/**    <-- 留空就不忽略；我们要提交日志和图
+
+# === Usual caches ===
 __pycache__/
 *.pyc
-

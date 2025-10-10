@@ -1,0 +1,18 @@
+[
+  {
+    "wav": "data/dummy/wav/ex0.wav",
+    "genre": 0,
+    "emotion": [
+      0.2,
+      0.3
+    ]
+  },
+  {
+    "wav": "data/dummy/wav/ex1.wav",
+    "genre": 1,
+    "emotion": [
+      0.6,
+      0.4
+    ]
+  }
+]
