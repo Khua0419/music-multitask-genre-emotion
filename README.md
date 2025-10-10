@@ -86,13 +86,6 @@ python scripts/plot_learning_curve.py experiments/logs/genre_curve.csv experimen
 python scripts/plot_confmat_from_csv.py experiments/logs/genre_confmat.csv experiments/logs/genre_confmat.png
 ```
 
-**Genre-only baseline**  
-Acc/F1 learning curve  
-![genre_curve](experiments/logs/genre_curve.png)
-
-Confusion matrix  
-![genre_confmat](experiments/logs/genre_confmat.png)
-
 **Emotion-only baseline**  
 RMSE (valence/arousal) learning curve  
 ![emotion_curve](experiments/logs/emotion_curve.png)
