@@ -60,6 +60,16 @@ We verified the end-to-end pipeline using 3 tiny dummy clips arranged as GTZAN-l
 ```
 These numbers are expected for a 3-sample toy set; the goal of this step is just to confirm the data → features → training → evaluation loop works before switching to real datasets (GTZAN/DEAM).
 
+### Results (GTZAN, stratified 80/20)
+- Best Val Acc: **0.823**, Macro-F1: **0.822** (Epoch 34)
+- Curves  
+  ![curves](experiments/logs/genre_learning_curves.png)
+- Confusion Matrix  
+  ![confmat](experiments/logs/genre_confmat.png)
+- Inference (example)  
+  `python -m scripts.predict_genre data/GTZAN_raw/jazz/jazz.00000.wav --topk 5`
+
+
 ### Preliminary results — plots
 
 **Genre-only baseline**  
