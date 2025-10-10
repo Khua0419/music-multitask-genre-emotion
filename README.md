@@ -100,3 +100,4 @@ RMSE (valence/arousal) learning curve
 **Multi-task (GTZAN + DEAM, alternating batches)**  
 Acc/F1/RMSE combined curves  
 ![mtl_curve](experiments/logs/mtl_curve.png)
+```
