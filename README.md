@@ -84,7 +84,7 @@ These numbers are expected for a 3-sample toy set; the goal of this step is just
 ```bash
 python scripts/plot_learning_curve.py experiments/logs/genre_curve.csv experiments/logs/genre_curve.png
 python scripts/plot_confmat_from_csv.py experiments/logs/genre_confmat.csv experiments/logs/genre_confmat.png
-
+```
 
 **Genre-only baseline**  
 Acc/F1 learning curve  
