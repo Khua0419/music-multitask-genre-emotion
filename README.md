@@ -80,8 +80,6 @@ Top-5 for data/GTZAN_raw/jazz/jazz.00000.wav:
 This section describes our **emotion regression baseline** on the [DEAM dataset](https://cvml.unige.ch/databases/DEAM/), predicting continuous **Valence** and **Arousal** values in the range `[1, 9]`.  
 We first built a light CNN model as the baseline, and then introduced a stronger **CRNN (CNN + BiGRU)** architecture to capture temporal emotion dynamics.
 
----
-
 ### 2. Data Layout
 ```bash
 data/DEAM/
@@ -94,7 +92,6 @@ data/lists/
   deam_train_mel.json / deam_val_mel.json
 
 ```
----
 ### 3. Preprocessing
 Step 1 — Generate splits
 ```bash
@@ -111,7 +108,6 @@ python -m scripts.extract_mels_deam
 - 22.05 kHz mono audio  
 - 128 mel bins, `n_fft = 1024`, `hop = 512`  
 - Normalized to `[0, 1]` and saved as `.npy`
----
 
 ### 4. Model Architectures
 - **CNN Baseline**  
@@ -124,7 +120,6 @@ python -m scripts.extract_mels_deam
   - Mean-frequency pooling → transforms `[B, C, F′, T′]` into `[B, T′, C]`  
   - A bidirectional GRU (`hidden = 128`, `layers = 1`) to learn emotional evolution  
   - Temporal mean pooling + linear layer → output `[Valence, Arousal]`
----
 
 ### 5. Training & Evaluation
 
@@ -137,9 +132,11 @@ python -m experiments.train_deam_crnn
 | CNN Baseline    | ≈ 0.91    | 0.63          |
 | **CRNN (BiGRU)**| **≈ 0.62**| **0.78**      |
 
-Learning curve:
-<p align="center"> <img src="experiments/logs/deam_crnn_curve.png" width="70%"> </p>
----
+**Learning curve**
+
+<p align="center">
+  <img src="experiments/logs/deam_crnn_curve.png" width="70%">
+</p>
 
 ### 6. Inference
 Single-file prediction
@@ -154,7 +151,6 @@ Sliding-window averaging (more stable)
 ```bash
 python -m scripts.predict_emotion_window "data/DEAM/mels/1000.npy"
 ```
----
 
 ### 7. Summary
 - The CRNN significantly improves temporal emotion modeling, boosting Pearson r from 0.63 → 0.78.
