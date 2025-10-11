@@ -71,3 +71,11 @@ Top-5 for data/GTZAN_raw/jazz/jazz.00000.wav:
   blues      p=0.030
   reggae     p=0.008
 ```
+---
+
+# 🎵 Emotion-only Baseline (DEAM)
+
+This stage uses the DEAM dataset for regression on valence (V) and arousal (A).
+
+## Data (DEAM)
+Expected folder:
