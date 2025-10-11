@@ -3,8 +3,15 @@
 
 **Repo:** [https://github.com/Khua0419/music-multitask-genre-emotion](https://github.com/Khua0419/music-multitask-genre-emotion)
 
-This stage documents the **GTZAN genre baseline** (real 80/20 split).  
-We provide: data preparation, training, validation plots, and a single-file inference demo.
+This project explores multi-task learning for music understanding, combining genre classification and emotion regression within a single deep-learning framework.
+Instead of training two independent models, we adopt a shared CNN encoder that jointly learns timbral and rhythmic representations from audio spectrograms, followed by task-specific heads for genre (categorical prediction) and emotion (continuous valence–arousal estimation).
+By training on both GTZAN (genre) and DEAM (emotion) datasets, the model leverages complementary cues—genre structure often correlates with emotional tone—to improve overall generalization.
+The repository includes:
+- Individual baselines for GTZAN and DEAM
+- A unified multi-task network with late-fusion features
+- Scripts for preprocessing, training, evaluation, and visualization
+
+This work serves as a foundation for further research on cross-domain music representation learning and affective computing.
 
 ---
 
@@ -17,60 +24,94 @@ pip install -r requirements.txt
 ```
 Data and checkpoints are git-ignored (data/**, experiments/checkpoints/**).
 
-## 🎧 Data (GTZAN)
+## 🧠 Genre-Only Baseline (GTZAN)
 
-Folder structure:
+### 1. Overview
+This section presents the genre classification baseline on the GTZAN dataset.
+The dataset consists of 10 balanced genres (100 tracks per genre), each with 30-second 22.05 kHz mono `.wav` files.
+We start from a lightweight CNN baseline and evaluate classification accuracy and F1-score on validation data.
+
+### 2. Data Layout
 ```bash
-data/GTZAN_raw/<genre>/<file>.wav
+data/GTZAN_raw/
+  ├── blues/
+  ├── classical/
+  ├── country/
+  ├── disco/
+  ├── hiphop/
+  ├── jazz/
+  ├── metal/
+  ├── pop/
+  ├── reggae/
+  └── rock/
 ```
+Each folder contains 100 audio clips per genre (GTZAN standard structure).
 
-## Generate stratified 80/20 train/val lists:
+### 3. Preprocessing
+Step 1 — Generate stratified 80/20 train/val splits
 ```bash
 python scripts/make_full_splits_balanced.py
-# creates:
-#   data/lists/gtzan_train.json
-#   data/lists/gtzan_val.json
 ```
-## 🚀 Train (Genre Baseline)
+Creates:
+```bash
+data/lists/gtzan_train.json
+data/lists/gtzan_val.json
+```
+Step 2 — Extract Mel-spectrograms (optional if already cached)
+```bash
+python -m scripts.extract_mels_gtzan
+```
+- 22.05 kHz mono audio
+- 128 Mel bins, `n_fft = 1024`, `hop = 512`
+- Normalized to `[0, 1]` and stored as `.npy`
+
+### 4. Model Architecture
+- CNN Baseline
+  - 3 convolutional blocks with batch normalization and ReLU
+  - Global average pooling + fully connected classifier (10 genres)
+  - Trained using cross-entropy loss, metrics: accuracy and F1-score
+  - Lightweight and fast, designed as a baseline for multitask extension
+ 
+### 5. Training & Evaluation
+Training command
 ```bash
 python -m experiments.train_genre_only
 ```
-
-Outputs (after training):
+Key outputs (after training):
 ```bash
-Logs: experiments/logs/genre_curve.csv
-
-Confusion-matrix CSV: experiments/logs/genre_confmat.csv
-
-Curves PNG: experiments/logs/genre_curve.png
-
-Confmat PNG: experiments/logs/genre_confmat.png
-
-Checkpoints: experiments/checkpoints/genre_last.pt (and optionally genre_best_eXX.pt)
+experiments/logs/genre_curve.csv
+experiments/logs/genre_curve.png
+experiments/logs/genre_confmat.csv
+experiments/logs/genre_confmat.png
+experiments/checkpoints/genre_last.pt
 ```
-
-## 📊 Validation Plots
-
-### Acc/F1 Learning Curve (validation)
+### 6. Validation Plots
+#### Acc/F1 Learning Curve (validation)
 ![Genre curve](experiments/logs/genre_curve.png)
 
-### Confusion Matrix (validation)
+#### Confusion Matrix (validation)
 ![Genre confmat](experiments/logs/genre_confmat.png)
 
-## 🎼 Single-file Inference (Top-k)
-
+### 7. Inference
+Single-file prediction (Top-k)
 ```bash
 python -m scripts.predict_genre "data/GTZAN_raw/jazz/jazz.00000.wav" 5
 ```
-Sample output:
+Sample output
 ```bash
 Top-5 for data/GTZAN_raw/jazz/jazz.00000.wav:
-  classical  p=0.835
-  jazz       p=0.069
-  country    p=0.050
-  blues      p=0.030
-  reggae     p=0.008
+classical  p=0.835
+jazz       p=0.069
+country    p=0.050
+blues      p=0.030
+reggae     p=0.008
 ```
+
+### 8. Summary
+- The GTZAN CNN baseline achieves stable convergence across 10 genres with balanced training.
+- Validation accuracy and F1-score curves confirm model stability after ~40 epochs.
+- Confusion matrix highlights overlap between musically similar genres (e.g., jazz–blues, pop–disco).
+- This baseline provides the Genre branch for later multitask training with emotion regression (DEAM).
 
 ---
 
