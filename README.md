@@ -197,3 +197,105 @@ python -m scripts.predict_emotion_window "data/DEAM/mels/1000.npy"
 - The CRNN significantly improves temporal emotion modeling, boosting Pearson r from 0.63 → 0.78.
 - The architecture remains lightweight and fully compatible with the genre-emotion multitask pipeline.
 - Future work will extend this module into a shared-encoder multitask framework, enabling simultaneous learning of genre + emotion representations.
+
+---
+## 🎯 Multitask Learning (Genre + Emotion)
+
+### 1. Overview
+This section describes our multitask model that jointly learns genre classification (GTZAN, 10 classes) and emotion regression (DEAM, Valence/Arousal).
+We use a shared CNN backbone with two heads (classification + regression) and a masked multitask loss so that GTZAN items contribute only to genre and DEAM items only to V/A.
+- Feature: late-fusion stack of Mel, MFCC, Chroma
+- Fixed time length for each sample (pad/center-crop) to keep batch shapes consistent
+- Loss (weighted): `L = λ_genre · CE + λ_emo · MSE` (we used λ_genre=1.5, λ_emo=1.0)
+- Windows-friendly: DataLoader `num_workers=0`
+
+### 2. Data Layout
+```bash
+data/
+  GTZAN_raw/                 # original GTZAN audio (.wav)
+  DEAM/                      # original DEAM audio
+data/lists/
+  gtzan_train.json           # GTZAN train split (genre only)
+  gtzan_val.json             # GTZAN val split   (genre only)
+  deam_train.json            # DEAM train split  (valence/arousal only)
+  deam_val.json              # DEAM val split    (valence/arousal only)
+
+  train_items.json           # merged train list for MTL  (wav/genre/emotion)
+  val_items.json             # merged val   list for MTL  (wav/genre/emotion)
+```
+
+Per-item fields (merged lists):
+- `wav`: absolute or project-relative path
+- `genre`: `0..9` for GTZAN, `-1` for DEAM (no genre label)
+- `emotion`: `[valence, arousal]` for DEAM, `NaN/NaN` for GTZAN
+
+**Genre label order (10 classes):**
+
+| id | label     |
+|:-:|-----------|
+| 0  | blues     |
+| 1  | classical |
+| 2  | country   |
+| 3  | disco     |
+| 4  | hiphop    |
+| 5  | jazz      |
+| 6  | metal     |
+| 7  | pop       |
+| 8  | reggae    |
+| 9  | rock      |
+
+### 3. Training
+Use the provided config (epochs / batch / lr / loss weights are stored here):
+```bash
+python -m experiments.train_multitask --cfg experiments/configs/mtl_deam_gtzan.json
+```
+Key config we used for the final run:
+```jsonc
+{
+  "epochs": 50,
+  "bs": 8, // use 4 if GPU memory is tight
+  "lr": 0.0005,
+  "lam_genre": 1.5,
+  "lam_emo": 1.0
+}
+```
+- Logs → `experiments/logs/mtl_curve.csv` (see `mtl_curve.png`)
+- Checkpoints → `experiments/checkpoints/mtl_best_epXX.pt`, `mtl_last.pt`
+- LR scheduler reduces LR on plateau (in our run at ~32/40/44 epochs)
+
+### 4. Inference
+A minimal predictor outputs Top-k genre + [valence, arousal]. Supports optional time-crop TTA.
+Single file:
+```bash
+python scripts/predict_mtl.py \
+  --ckpt experiments/checkpoints/mtl_best_ep48.pt \
+  --wav path/to/audio.wav \
+  --topk 3
+```
+Folder (recursive) with TTA (5 crops):
+```bash
+python scripts/predict_mtl.py \
+  --ckpt experiments/checkpoints/mtl_best_ep48.pt \
+  --wav path/to/folder \
+  --topk 3 --tta 5
+```
+
+### 5. Results (this run)
+- Genre (macro F1): ≈ 0.81 @ epoch 48
+- Emotion: RMSE_V ≈ 0.027, RMSE_A ≈ 0.036
+- Learning curves: `experiments/logs/mtl_curve.png`
+#### MTL Validation Plots
+![MTL Training Curves](./experiments/logs/mtl_curve.png)
+- Best checkpoint: `experiments/checkpoints/mtl_best_ep48.pt`
+Note: Typical GTZAN confusions (e.g., reggae↔pop/disco, metal↔jazz) may remain on some tracks. TTA helps stabilize predictions. If needed, bias more toward genre via lam_genre in the config.
+
+### 6.Summary
+- **Best checkpoint**: `experiments/checkpoints/mtl_best_ep48.pt`
+- **Final metrics**: **F1 ≈ 0.81** (macro) · **RMSE_V ≈ 0.027** · **RMSE_A ≈ 0.036**
+- **Config (final run)**: `epochs=50`, `bs=8` (4 if tight), `lr=5e-4`,
+  `lam_genre=1.5`, `lam_emo=1.0`
+- **Data**: GTZAN (genre), DEAM (valence/arousal) → merged lists with masked loss
+- **Features**: Mel + MFCC + Chroma (late-fusion), fixed time length
+- **Training**: ReduceLROnPlateau at ~32/40/44; Windows-friendly (`num_workers=0`)
+- **Inference**: `scripts/predict_mtl.py` (supports `--tta`)
+- **Artifacts**: logs (`mtl_curve.csv`), plot (`mtl_curve.png`), checkpoints (`mtl_best_ep48.pt`, `mtl_last.pt`)
