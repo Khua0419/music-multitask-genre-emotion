@@ -3,15 +3,15 @@
 
 **Repo:** [https://github.com/Khua0419/music-multitask-genre-emotion](https://github.com/Khua0419/music-multitask-genre-emotion)
 
-This project explores multi-task learning for music understanding, combining genre classification and emotion regression within a single deep-learning framework.
-Instead of training two independent models, we adopt a shared CNN encoder that jointly learns timbral and rhythmic representations from audio spectrograms, followed by task-specific heads for genre (categorical prediction) and emotion (continuous valence–arousal estimation).
-By training on both GTZAN (genre) and DEAM (emotion) datasets, the model leverages complementary cues—genre structure often correlates with emotional tone—to improve overall generalization.
+This project explores **multi-task learning for music understanding**, combining **genre classification** and **emotion regression** within a single deep-learning framework.
+Instead of training two independent models, we adopt a **shared CNN encoder** that jointly learns timbral and rhythmic representations from audio spectrograms, followed by task-specific heads for **genre** (categorical prediction) and **emotion** (continuous valence–arousal estimation).
+By training on both **GTZAN** (genre) and **DEAM** (emotion) datasets, the model leverages complementary cues—genre structure often correlates with emotional tone—to improve overall generalization.
 The repository includes:
-- Individual baselines for GTZAN and DEAM
-- A unified multi-task network with late-fusion features
+- Individual baselines for **GTZAN** and **DEAM**
+- A unified **multi-task network** with late-fusion features
 - Scripts for preprocessing, training, evaluation, and visualization
 
-This work serves as a foundation for further research on cross-domain music representation learning and affective computing.
+This work serves as a foundation for further research on **cross-domain music representation learning** and affective computing.
 
 ---
 
@@ -27,12 +27,12 @@ Data and checkpoints are git-ignored (data/**, experiments/checkpoints/**).
 ## 🧠 Genre-Only Baseline (GTZAN)
 
 ### 1. Overview
-This section presents the genre classification baseline on the GTZAN dataset.
+This section presents the **genre classification baseline** on the GTZAN dataset.
 The dataset consists of 10 balanced genres (100 tracks per genre), each with 30-second 22.05 kHz mono `.wav` files.
 We start from a lightweight CNN baseline and evaluate classification accuracy and F1-score on validation data.
 
 ### 2. Data Layout
-```bash
+```graphql
 data/GTZAN_raw/
   ├── blues/
   ├── classical/
@@ -48,7 +48,7 @@ data/GTZAN_raw/
 Each folder contains 100 audio clips per genre (GTZAN standard structure).
 
 ### 3. Preprocessing
-Step 1 — Generate stratified 80/20 train/val splits
+**Step 1 — Generate stratified 80/20 train/val splits**
 ```bash
 python scripts/make_full_splits_balanced.py
 ```
@@ -57,7 +57,7 @@ Creates:
 data/lists/gtzan_train.json
 data/lists/gtzan_val.json
 ```
-Step 2 — Extract Mel-spectrograms (optional if already cached)
+**Step 2 — Extract Mel-spectrograms (optional if already cached)**
 ```bash
 python -m scripts.extract_mels_gtzan
 ```
@@ -66,18 +66,18 @@ python -m scripts.extract_mels_gtzan
 - Normalized to `[0, 1]` and stored as `.npy`
 
 ### 4. Model Architecture
-- CNN Baseline
+- **CNN Baseline**
   - 3 convolutional blocks with batch normalization and ReLU
   - Global average pooling + fully connected classifier (10 genres)
-  - Trained using cross-entropy loss, metrics: accuracy and F1-score
+  - Trained using **cross-entropy loss**, metrics: accuracy and F1-score
   - Lightweight and fast, designed as a baseline for multitask extension
  
 ### 5. Training & Evaluation
-Training command
+**Training command**
 ```bash
 python -m experiments.train_genre_only
 ```
-Key outputs (after training):
+**Key outputs (after training)**:
 ```bash
 experiments/logs/genre_curve.csv
 experiments/logs/genre_curve.png
@@ -85,6 +85,7 @@ experiments/logs/genre_confmat.csv
 experiments/logs/genre_confmat.png
 experiments/checkpoints/genre_last.pt
 ```
+
 ### 6. Validation Plots
 #### Acc/F1 Learning Curve (validation)
 ![Genre curve](experiments/logs/genre_curve.png)
@@ -93,11 +94,11 @@ experiments/checkpoints/genre_last.pt
 ![Genre confmat](experiments/logs/genre_confmat.png)
 
 ### 7. Inference
-Single-file prediction (Top-k)
+**Single-file prediction (Top-k)**
 ```bash
 python -m scripts.predict_genre "data/GTZAN_raw/jazz/jazz.00000.wav" 5
 ```
-Sample output
+**Sample output**
 ```bash
 Top-5 for data/GTZAN_raw/jazz/jazz.00000.wav:
 classical  p=0.835
@@ -111,7 +112,7 @@ reggae     p=0.008
 - The GTZAN CNN baseline achieves stable convergence across 10 genres with balanced training.
 - Validation accuracy and F1-score curves confirm model stability after ~40 epochs.
 - Confusion matrix highlights overlap between musically similar genres (e.g., jazz–blues, pop–disco).
-- This baseline provides the Genre branch for later multitask training with emotion regression (DEAM).
+- This baseline provides the **Genre branch** for later multitask training with emotion regression (DEAM).
 
 ---
 
@@ -122,7 +123,7 @@ This section describes our **emotion regression baseline** on the [DEAM dataset]
 We first built a light CNN model as the baseline, and then introduced a stronger **CRNN (CNN + BiGRU)** architecture to capture temporal emotion dynamics.
 
 ### 2. Data Layout
-```bash
+```graphql
 data/DEAM/
   audio/             # Original DEAM audio files (mp3/wav)
   annotations/       # Official annotation CSVs
@@ -131,18 +132,14 @@ data/lists/
   deam_train.json    # Song-level training split (80%)
   deam_val.json      # Song-level validation split (20%)
   deam_train_mel.json / deam_val_mel.json
-
 ```
+
 ### 3. Preprocessing
-Step 1 — Generate splits
+**Step 1 — Generate splits**
 ```bash
 python -m scripts.make_deam_splits
 ```
-Step 2 — Extract Mel-spectrograms
-```bash
-python -m scripts.extract_mels_deam
-```
-Step 2 — Extract Mel-spectrograms
+**Step 2 — Extract Mel-spectrograms**
 ```bash
 python -m scripts.extract_mels_deam
 ```
@@ -156,11 +153,12 @@ python -m scripts.extract_mels_deam
   Time information is mostly flattened — simple and efficient but limited in modeling temporal emotion flow.
 
 - **CRNN (CNN + BiGRU)**  
-  To capture temporal dependencies, the CRNN uses:  
+  To capture **temporal dependencies**, the CRNN uses:  
   - 3 convolutional blocks to extract short-time features  
   - Mean-frequency pooling → transforms `[B, C, F′, T′]` into `[B, T′, C]`  
-  - A bidirectional GRU (`hidden = 128`, `layers = 1`) to learn emotional evolution  
+  - A **bidirectional GRU** (`hidden = 128`, `layers = 1`) to learn emotional evolution  
   - Temporal mean pooling + linear layer → output `[Valence, Arousal]`
+The model is trained with **MSE loss** and monitored using **Pearson correlation**.
 
 ### 5. Training & Evaluation
 
@@ -180,7 +178,7 @@ python -m experiments.train_deam_crnn
 </p>
 
 ### 6. Inference
-Single-file prediction
+**Single-file prediction**
 ```bash
 python -m scripts.predict_emotion "data/DEAM/mels/1000.npy"
 ```
@@ -188,15 +186,15 @@ Output example:
 ```bash
 Emotion (Valence, Arousal): 5.46, 5.50
 ```
-Sliding-window averaging (more stable)
+**Sliding-window averaging (more stable)**
 ```bash
 python -m scripts.predict_emotion_window "data/DEAM/mels/1000.npy"
 ```
 
 ### 7. Summary
-- The CRNN significantly improves temporal emotion modeling, boosting Pearson r from 0.63 → 0.78.
+- The **CRNN** significantly improves temporal emotion modeling, boosting Pearson r from 0.63 → 0.78.
 - The architecture remains lightweight and fully compatible with the genre-emotion multitask pipeline.
-- Future work will extend this module into a shared-encoder multitask framework, enabling simultaneous learning of genre + emotion representations.
+- Future work will extend this module into a **shared-encoder multitask framework**, enabling simultaneous learning of **genre + emotion** representations.
 
 ---
 ## 🎯 Multitask Learning (Genre + Emotion)
@@ -287,6 +285,7 @@ python scripts/predict_mtl.py \
 - Best checkpoint: `experiments/checkpoints/mtl_best_ep48.pt`
 #### MTL Validation Plots
 ![MTL Training Curves](./experiments/logs/mtl_curve.png)
+
 Note: Typical GTZAN confusions (e.g., reggae↔pop/disco, metal↔jazz) may remain on some tracks. TTA helps stabilize predictions. If needed, bias more toward genre via lam_genre in the config.
 
 ### 6.Summary
