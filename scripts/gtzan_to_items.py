@@ -2,7 +2,7 @@
 from pathlib import Path
 import json
 
-ROOT = Path("data/GTZAN_raw")  # 期望目录结构: data/GTZAN_raw/<genre>/<wav>
+ROOT = Path("data/GTZAN_raw")  # Expected Directory Structure: data/GTZAN_raw/<genre>/<wav>
 if not ROOT.exists():
     raise SystemExit("目录 data/GTZAN_raw 不存在，请先把GTZAN解压到这个路径。")
 
@@ -14,10 +14,10 @@ for g in genres:
         items.append({
             "wav": str(wav.as_posix()),
             "genre": label_map[g],
-            "emotion": [0.0, 0.0]  # 占位，单任务用不到
+            "emotion": [0.0, 0.0]  # Placeholder, not needed for single-task use
         })
 
-# 8:2 划分（简单顺序切分，之后可改为按文件名分层）
+# 8:2 Partitioning (Simple sequential partitioning, later changeable to hierarchical partitioning by filename)
 n = int(0.8 * len(items))
 Path("data/lists").mkdir(parents=True, exist_ok=True)
 (Path("data/lists/gtzan_train.json")
