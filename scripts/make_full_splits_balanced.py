@@ -41,7 +41,7 @@ for g in genre2id:
 train, val = [], []
 for g, lst in items_by_genre.items():
     random.shuffle(lst)
-    # 典型是 100 首/类，保险起见按 80/剩余
+    # Typically 100 songs per category; to be safe, use 80 and the remainder.
     n_tr = min(80, max(0, len(lst)-20))
     train.extend(lst[:n_tr])
     val.extend(lst[n_tr:])
