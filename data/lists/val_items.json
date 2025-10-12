@@ -1,7 +1,1835 @@
 [
   {
-    "wav": "data/dummy/wav/ex2.wav",
+    "task": "genre",
+    "wav": "data/GTZAN_raw/classical/classical.00074.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/hiphop/hiphop.00061.wav",
+    "genre": 3,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/jazz/jazz.00005.wav",
+    "genre": 4,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/hiphop/hiphop.00071.wav",
+    "genre": 3,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/blues/blues.00064.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/reggae/reggae.00060.wav",
+    "genre": 7,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/pop/pop.00019.wav",
+    "genre": 6,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/reggae/reggae.00077.wav",
+    "genre": 7,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/pop/pop.00015.wav",
+    "genre": 6,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/disco/disco.00077.wav",
     "genre": 2,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/classical/classical.00053.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/classical/classical.00087.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/metal/metal.00097.wav",
+    "genre": 5,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/metal/metal.00083.wav",
+    "genre": 5,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/jazz/jazz.00047.wav",
+    "genre": 4,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/hiphop/hiphop.00012.wav",
+    "genre": 3,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/blues/blues.00038.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/metal/metal.00091.wav",
+    "genre": 5,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/country/country.00007.wav",
+    "genre": 1,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/classical/classical.00066.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/jazz/jazz.00042.wav",
+    "genre": 4,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/jazz/jazz.00059.wav",
+    "genre": 4,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/reggae/reggae.00090.wav",
+    "genre": 7,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/blues/blues.00053.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/jazz/jazz.00028.wav",
+    "genre": 4,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/metal/metal.00056.wav",
+    "genre": 5,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/metal/metal.00087.wav",
+    "genre": 5,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/country/country.00043.wav",
+    "genre": 1,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/reggae/reggae.00038.wav",
+    "genre": 7,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/pop/pop.00012.wav",
+    "genre": 6,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/blues/blues.00033.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/blues/blues.00012.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/rock/rock.00004.wav",
+    "genre": 8,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/disco/disco.00083.wav",
+    "genre": 2,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/jazz/jazz.00092.wav",
+    "genre": 4,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/metal/metal.00047.wav",
+    "genre": 5,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/jazz/jazz.00038.wav",
+    "genre": 4,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/reggae/reggae.00011.wav",
+    "genre": 7,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/blues/blues.00017.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/pop/pop.00074.wav",
+    "genre": 6,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/disco/disco.00060.wav",
+    "genre": 2,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/rock/rock.00033.wav",
+    "genre": 8,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/reggae/reggae.00098.wav",
+    "genre": 7,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/country/country.00021.wav",
+    "genre": 1,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/classical/classical.00075.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/reggae/reggae.00099.wav",
+    "genre": 7,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/classical/classical.00016.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/hiphop/hiphop.00042.wav",
+    "genre": 3,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/blues/blues.00005.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/classical/classical.00027.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/metal/metal.00079.wav",
+    "genre": 5,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/reggae/reggae.00054.wav",
+    "genre": 7,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/pop/pop.00096.wav",
+    "genre": 6,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/rock/rock.00045.wav",
+    "genre": 8,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/metal/metal.00058.wav",
+    "genre": 5,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/classical/classical.00096.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/jazz/jazz.00067.wav",
+    "genre": 4,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/pop/pop.00036.wav",
+    "genre": 6,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/country/country.00026.wav",
+    "genre": 1,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/disco/disco.00091.wav",
+    "genre": 2,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/country/country.00096.wav",
+    "genre": 1,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/rock/rock.00007.wav",
+    "genre": 8,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/metal/metal.00066.wav",
+    "genre": 5,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/blues/blues.00085.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/reggae/reggae.00063.wav",
+    "genre": 7,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/blues/blues.00045.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/classical/classical.00057.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/classical/classical.00067.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/disco/disco.00050.wav",
+    "genre": 2,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/classical/classical.00069.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/country/country.00076.wav",
+    "genre": 1,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/country/country.00086.wav",
+    "genre": 1,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/hiphop/hiphop.00097.wav",
+    "genre": 3,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/metal/metal.00004.wav",
+    "genre": 5,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/disco/disco.00080.wav",
+    "genre": 2,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/country/country.00056.wav",
+    "genre": 1,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/hiphop/hiphop.00021.wav",
+    "genre": 3,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/blues/blues.00079.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/blues/blues.00036.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/reggae/reggae.00029.wav",
+    "genre": 7,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/jazz/jazz.00016.wav",
+    "genre": 4,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/classical/classical.00088.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/disco/disco.00096.wav",
+    "genre": 2,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/metal/metal.00037.wav",
+    "genre": 5,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/blues/blues.00065.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/jazz/jazz.00058.wav",
+    "genre": 4,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/disco/disco.00000.wav",
+    "genre": 2,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/metal/metal.00049.wav",
+    "genre": 5,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/reggae/reggae.00086.wav",
+    "genre": 7,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/rock/rock.00044.wav",
+    "genre": 8,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/hiphop/hiphop.00014.wav",
+    "genre": 3,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/hiphop/hiphop.00072.wav",
+    "genre": 3,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/hiphop/hiphop.00054.wav",
+    "genre": 3,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/reggae/reggae.00069.wav",
+    "genre": 7,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/disco/disco.00035.wav",
+    "genre": 2,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/hiphop/hiphop.00063.wav",
+    "genre": 3,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/hiphop/hiphop.00048.wav",
+    "genre": 3,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/disco/disco.00086.wav",
+    "genre": 2,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/reggae/reggae.00096.wav",
+    "genre": 7,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/blues/blues.00032.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/jazz/jazz.00091.wav",
+    "genre": 4,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/rock/ex2.wav",
+    "genre": 8,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/rock/rock.00009.wav",
+    "genre": 8,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/blues/blues.00051.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/reggae/reggae.00002.wav",
+    "genre": 7,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/country/country.00092.wav",
+    "genre": 1,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/jazz/jazz.00096.wav",
+    "genre": 4,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/reggae/reggae.00019.wav",
+    "genre": 7,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/country/country.00072.wav",
+    "genre": 1,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/country/country.00032.wav",
+    "genre": 1,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/country/country.00001.wav",
+    "genre": 1,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/rock/rock.00049.wav",
+    "genre": 8,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/metal/metal.00098.wav",
+    "genre": 5,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/pop/pop.00017.wav",
+    "genre": 6,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/disco/disco.00015.wav",
+    "genre": 2,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/hiphop/hiphop.00095.wav",
+    "genre": 3,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/rock/rock.00078.wav",
+    "genre": 8,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/country/country.00015.wav",
+    "genre": 1,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/jazz/jazz.00010.wav",
+    "genre": 4,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/blues/blues.00097.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/rock/rock.00080.wav",
+    "genre": 8,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/reggae/reggae.00015.wav",
+    "genre": 7,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/pop/pop.00047.wav",
+    "genre": 6,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/metal/metal.00090.wav",
+    "genre": 5,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/disco/disco.00092.wav",
+    "genre": 2,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/disco/disco.00001.wav",
+    "genre": 2,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/pop/pop.00027.wav",
+    "genre": 6,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/rock/rock.00096.wav",
+    "genre": 8,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/disco/disco.00038.wav",
+    "genre": 2,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/jazz/jazz.00019.wav",
+    "genre": 4,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/classical/classical.00050.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/hiphop/hiphop.00019.wav",
+    "genre": 3,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/disco/disco.00012.wav",
+    "genre": 2,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/pop/pop.00080.wav",
+    "genre": 6,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/metal/metal.00050.wav",
+    "genre": 5,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/pop/pop.00059.wav",
+    "genre": 6,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/metal/metal.00016.wav",
+    "genre": 5,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/pop/pop.00022.wav",
+    "genre": 6,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/country/country.00089.wav",
+    "genre": 1,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/rock/rock.00000.wav",
+    "genre": 8,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/reggae/reggae.00080.wav",
+    "genre": 7,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/classical/classical.00086.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/rock/rock.00086.wav",
+    "genre": 8,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/classical/classical.00004.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/reggae/reggae.00051.wav",
+    "genre": 7,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/metal/metal.00015.wav",
+    "genre": 5,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/jazz/jazz.00001.wav",
+    "genre": 4,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/pop/pop.00073.wav",
+    "genre": 6,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/blues/blues.00049.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/rock/rock.00066.wav",
+    "genre": 8,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/jazz/jazz.00065.wav",
+    "genre": 4,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/pop/pop.00038.wav",
+    "genre": 6,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/reggae/reggae.00035.wav",
+    "genre": 7,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/blues/blues.00027.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/country/country.00052.wav",
+    "genre": 1,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/rock/rock.00059.wav",
+    "genre": 8,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/pop/pop.00069.wav",
+    "genre": 6,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/rock/rock.00013.wav",
+    "genre": 8,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/classical/classical.00089.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/classical/classical.00010.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/rock/rock.00087.wav",
+    "genre": 8,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/country/country.00020.wav",
+    "genre": 1,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/hiphop/hiphop.00043.wav",
+    "genre": 3,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/disco/disco.00025.wav",
+    "genre": 2,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/rock/rock.00084.wav",
+    "genre": 8,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/blues/blues.00074.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/rock/rock.00002.wav",
+    "genre": 8,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/pop/pop.00039.wav",
+    "genre": 6,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/disco/disco.00078.wav",
+    "genre": 2,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/blues/blues.00061.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/reggae/reggae.00034.wav",
+    "genre": 7,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/hiphop/hiphop.00060.wav",
+    "genre": 3,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/disco/disco.00067.wav",
+    "genre": 2,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/hiphop/hiphop.00080.wav",
+    "genre": 3,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/pop/pop.00067.wav",
+    "genre": 6,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/country/country.00022.wav",
+    "genre": 1,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/disco/disco.00023.wav",
+    "genre": 2,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/country/country.00067.wav",
+    "genre": 1,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/blues/blues.00062.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/metal/metal.00094.wav",
+    "genre": 5,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/pop/pop.00045.wav",
+    "genre": 6,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/rock/rock.00092.wav",
+    "genre": 8,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/hiphop/hiphop.00089.wav",
+    "genre": 3,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/pop/pop.00041.wav",
+    "genre": 6,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/classical/classical.00019.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/hiphop/hiphop.00004.wav",
+    "genre": 3,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/hiphop/hiphop.00015.wav",
+    "genre": 3,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/classical/classical.00035.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/metal/metal.00024.wav",
+    "genre": 5,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/disco/disco.00024.wav",
+    "genre": 2,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/pop/pop.00009.wav",
+    "genre": 6,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/classical/classical.00011.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/jazz/jazz.00020.wav",
+    "genre": 4,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/metal/metal.00045.wav",
+    "genre": 5,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/hiphop/hiphop.00038.wav",
+    "genre": 3,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/country/country.00060.wav",
+    "genre": 1,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/country/country.00099.wav",
+    "genre": 1,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/jazz/jazz.00061.wav",
+    "genre": 4,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/pop/pop.00040.wav",
+    "genre": 6,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/jazz/jazz.00008.wav",
+    "genre": 4,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/rock/rock.00036.wav",
+    "genre": 8,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/classical/classical.00030.wav",
+    "genre": 0,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "genre",
+    "wav": "data/GTZAN_raw/jazz/jazz.00093.wav",
+    "genre": 4,
+    "emotion": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "task": "emotion",
+    "wav": "data/dummy/wav/ex2.wav",
+    "genre": -1,
     "emotion": [
       0.4,
       0.7
