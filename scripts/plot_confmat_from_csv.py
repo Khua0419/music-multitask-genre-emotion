@@ -15,18 +15,18 @@ def main():
         r = csv.reader(f)
         rows = [row for row in r]
 
-    # 第一行是列头：["", "pred_0", ..., "pred_9"]
+    # The first row is the column headers: [“”, ‘pred_0’, ..., “pred_9”]
     header = rows[0]
     body   = rows[1:]
 
-    # 只取形如 ["true_0", n11, n12, ...] 的行
+    # Only select rows in the form of [“true_0”, n11, n12, ...]
     data = []
     ytick = []
     for row in body:
         if not row: continue
         if not row[0].startswith("true_"): continue
         ytick.append(row[0].split("_",1)[1])
-        # 将空白安全转为 0
+        # Convert whitespace to 0
         nums = []
         for x in row[1:]:
             try:
@@ -50,7 +50,7 @@ def main():
     plt.xticks(np.arange(len(xtick)), xtick)
     plt.yticks(np.arange(len(ytick)), ytick)
 
-    # 画数字
+    # Drawing numbers
     vmax = cm.max() if cm.size else 1
     for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
         val = cm[i, j]
