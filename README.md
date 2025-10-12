@@ -286,7 +286,7 @@ python scripts/predict_mtl.py \
 #### MTL Validation Plots
 ![MTL Training Curves](./experiments/logs/mtl_curve.png)
 
-Note: Typical GTZAN confusions (e.g., reggae↔pop/disco, metal↔jazz) may remain on some tracks. TTA helps stabilize predictions. If needed, bias more toward genre via lam_genre in the config.
+> Note: Typical GTZAN confusions (e.g., reggae↔pop/disco, metal↔jazz) may remain on some tracks. TTA helps stabilize predictions. If needed, bias more toward genre via lam_genre in the config.
 
 ### 6.Summary
 - **Best checkpoint**: `experiments/checkpoints/mtl_best_ep48.pt`
@@ -298,3 +298,36 @@ Note: Typical GTZAN confusions (e.g., reggae↔pop/disco, metal↔jazz) may rema
 - **Training**: ReduceLROnPlateau at ~32/40/44; Windows-friendly (`num_workers=0`)
 - **Inference**: `scripts/predict_mtl.py` (supports `--tta`)
 - **Artifacts**: logs (`mtl_curve.csv`), plot (`mtl_curve.png`), checkpoints (`mtl_best_ep48.pt`, `mtl_last.pt`)
+
+---
+
+## 📚 References
+
+1. Tzanetakis, G., & Cook, P. (2002). *Musical genre classification of audio signals.*  
+   **IEEE Transactions on Speech and Audio Processing, 10(5), 293–302.**  
+   → The canonical GTZAN dataset reference, used for the 10-genre classification baseline.
+
+2. Aljanaki, A., Yang, Y.-H., & Soleymani, M. (2017). *Developing a benchmark for emotional analysis of music.*  
+   **PLoS ONE, 12(3), e0173392.**  
+   → Source of the DEAM dataset for continuous valence–arousal (V/A) emotion regression.
+
+3. Caruana, R. (1997). *Multitask learning.*  
+   **Machine Learning, 28(1), 41–75.**  
+   → The foundational paper introducing the concept of shared representation learning for related tasks.
+
+4. Kingma, D. P., & Ba, J. L. (2015). *Adam: A Method for Stochastic Optimization.*  
+   **ICLR 2015.**  
+   → Optimizer used in model training (`torch.optim.Adam`).
+
+5. Paszke, A., et al. (2019). *PyTorch: An Imperative Style, High-Performance Deep Learning Library.*  
+   **NeurIPS 2019.**  
+   → Framework for all model implementation and training routines.
+
+6. Goodfellow, I., Bengio, Y., & Courville, A. (2016). *Deep Learning.*  
+   **MIT Press.**  
+   → General reference for CNN/CRNN architectures and representation learning principles.
+
+---
+
+> **Note:** All code, dataset splits, and configuration files are derived from open-source academic benchmarks.  
+> Please cite the corresponding datasets (GTZAN, DEAM) when reusing or publishing derivative works.
