@@ -15,7 +15,7 @@ def dump(obj, p):
 train = load("data/lists/gtzan_train.json")
 val   = load("data/lists/gtzan_val.json")
 
-# 只保留含有 wav 键且文件存在、genre为0..9 的
+# Only retain files containing the wav key, where the file exists and the genre is 0..9.
 def ok(x):
     return isinstance(x.get("wav"), str) and os.path.exists(x["wav"]) \
         and isinstance(x.get("genre"), int) and 0 <= x["genre"] < 10
