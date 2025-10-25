@@ -33,6 +33,28 @@ Our model does **not** synthesize audio; “outputs” are labels/curves (JSON/p
 - **Clip 1** → [▶ Play MP4](https://raw.githubusercontent.com/Khua0419/music-multitask-genre-emotion/main/demos/clip1.mp4) · [WAV](https://raw.githubusercontent.com/Khua0419/music-multitask-genre-emotion/main/demos/clip1.wav) · [Output JSON](demos/clip1_pred.json)
 - **Clip 2** → [▶ Play MP4](https://raw.githubusercontent.com/Khua0419/music-multitask-genre-emotion/main/demos/clip2.mp4) · [WAV](https://raw.githubusercontent.com/Khua0419/music-multitask-genre-emotion/main/demos/clip2.wav) · [Output JSON](demos/clip2_pred.json)
 
+### Why these demos?
+These short clips are here so reviewers can **listen to the inputs** and **inspect the model outputs**
+without running the code. Our model does not synthesize audio; the “outputs” are labels/curves
+(genre top-k and arousal/valence statistics) saved as JSON/plots.
+
+### What to listen/look for
+- **Genre plausibility:** does the top-k genre match the musical cues (instrumentation, rhythm)?
+- **Arousal trend:** louder/faster segments → typically **higher** arousal.
+- **Valence trend:** brighter/happier harmony → typically **higher** valence.
+- **Failure cases:** we include at least one clip where the model is wrong or uncertain (see Notes below).
+
+> How to play: click a file link and your browser will **download or play** it directly (raw link).  
+> Clips are ≤10–20 s, 22.05 kHz mono, to keep files small.
+
+**Notes on metrics**
+- DEAM labels are min-max normalized to **[0,1]** during training; unless specified, RMSE/PCC are reported on the **scaled** space.
+- For raw-scale reporting ([1,9]), we inverse-transform predictions during evaluation.
+
+**Reproducibility pointers**
+- Audio demo files live in `demos/`. Outputs are in `demos/*_pred.json` (schema: file, genre_top3, arousal_mean, valence_mean).
+- Figures are exported to `docs/figures/` when running evaluation scripts.
+
 ---
 
 ## 🧩 Environment
@@ -113,6 +135,27 @@ experiments/checkpoints/genre_last.pt
 
 #### Confusion Matrix (validation)
 ![Genre confmat](experiments/logs/genre_confmat.png)
+
+### Error analysis (Genre)
+
+From the validation confusion matrix, the most frequent confusions are:
+- **rock → country**: 8 clips
+- **hiphop → reggae**: 3 clips
+- **metal → rock**: 3 clips; **pop → rock**: 2 clips
+- **country → blues**: 2 clips; **country → jazz**: 2 clips
+
+These errors typically occur between classes that share instrumentation and rhythm
+patterns (e.g., *rock–country/metal*, *hiphop–reggae*, *jazz–blues*). We provide
+short listenable clips in `demos/` so reviewers can compare the input audio with
+the predicted labels (see **Demos**).
+> Label order used (GTZAN alphabetical):  
+> `0=blues, 1=classical, 2=country, 3=disco, 4=hiphop, 5=jazz, 6=metal, 7=pop, 8=reggae, 9=rock`.
+
+**Failure case (clip2)**  
+Ground truth: `rock`. The model predicts `pop/country` with higher confidence.
+This matches our confusion matrix where rock is often confused with country/pop
+on short segments that capture drums and strumming but little harmonic context.
+See `demos/clip2.wav` and `demos/clip2_pred.json`.
 
 ### 7. Inference
 **Single-file prediction (Top-k)**
