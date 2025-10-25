@@ -1,7 +1,0 @@
-{
-  "file": "clip1.wav",
-  "genre_top3": [["rock", 0.62], ["metal", 0.21], ["punk", 0.07]],
-  "arousal_mean": 0.47,
-  "valence_mean": 0.23,
-  "note": "Placeholder; will be replaced after running inference."
-}
