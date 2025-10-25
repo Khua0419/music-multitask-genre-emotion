@@ -3,6 +3,13 @@
 
 **Repo:** [https://github.com/Khua0419/music-multitask-genre-emotion](https://github.com/Khua0419/music-multitask-genre-emotion)
 
+> **TL;DR**  
+We study a shared-encoder multitask model for **genre classification (GTZAN)**
+and **emotion regression (DEAM)**. Under a comparable parameter budget,
+our MTL model improves **Genre Macro-F1 by +X.X pts** and reduces **Valence/Arousal
+RMSE by Y–Z%** vs. strong single-task baselines. We release configs, scripts,
+and **listenable demos** with exact seeds for full reproducibility.
+
 This project explores **multi-task learning for music understanding**, combining **genre classification** and **emotion regression** within a single deep-learning framework.
 Instead of training two independent models, we adopt a **shared CNN encoder** that jointly learns timbral and rhythmic representations from audio spectrograms, followed by task-specific heads for **genre** (categorical prediction) and **emotion** (continuous valence–arousal estimation).
 By training on both **GTZAN** (genre) and **DEAM** (emotion) datasets, the model leverages complementary cues—genre structure often correlates with emotional tone—to improve overall generalization.
@@ -13,6 +20,24 @@ The repository includes:
 
 This work serves as a foundation for further research on **cross-domain music representation learning** and affective computing.
 
+## Research Questions (short)
+- RQ1: Does multitask learning outperform single-task models under a similar parameter budget?
+- RQ2: How do backbone sharing choices and loss weight λ trade off genre vs emotion?
+- RQ3: How do segment length and augmentations affect both tasks differently?
+
+## Demos (listenable examples)
+
+**Demo 1**  
+- Input:  [▶️ demo1_input.wav](demos/demo1_input.wav)  
+- Output: [▶️ demo1_pred.wav](demos/demo1_pred.wav)  
+- Meta:   [demo1_pred.json](demos/demo1_pred.json)
+
+**Demo 2**  
+- Input:  [▶️ demo2_input.wav](demos/demo2_input.wav)  
+- Output: [▶️ demo2_pred.wav](demos/demo2_pred.wav)
+
+> Tip: keep each WAV ≤ 10 MB (22.05 kHz mono is fine).
+
 ---
 
 ## 🧩 Environment
@@ -21,6 +46,7 @@ This work serves as a foundation for further research on **cross-domain music re
 conda create -n mtl-audio python=3.10 -y
 conda activate mtl-audio
 pip install -r requirements.txt
+conda env create -f environment.yml && conda activate mtl-audio
 ```
 Data and checkpoints are git-ignored (data/**, experiments/checkpoints/**).
 
