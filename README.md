@@ -27,16 +27,16 @@ This work serves as a foundation for further research on **cross-domain music re
 
 ## Demos (listenable examples)
 
-**Demo 1**  
-- Input:  [▶️ demo1_input.wav](demos/demo1_input.wav)  
-- Output: [▶️ demo1_pred.wav](demos/demo1_pred.wav)  
-- Meta:   [demo1_pred.json](demos/demo1_pred.json)
+All examples live in **[demos/](demos/)**.  
+Our model does **not** synthesize audio; “outputs” are labels/curves (JSON/plots).
 
-**Demo 2**  
-- Input:  [▶️ demo2_input.wav](demos/demo2_input.wav)  
-- Output: [▶️ demo2_pred.wav](demos/demo2_pred.wav)
+- Input:  [clip1.wav](demos/clip1.wav) · Output: [clip1_pred.json](demos/clip1_pred.json)  
+- Input:  [clip2.wav](demos/clip2.wav) · Output: [clip2_pred.json](demos/clip2_pred.json)
 
-> Tip: keep each WAV ≤ 10 MB (22.05 kHz mono is fine).
+*Notes*:
+- Short WAVs (≤10s, 22.05 kHz mono, ≤10 MB) to avoid LFS and load issues.
+- DEAM labels are normalized to [0,1] during training; we report **scaled metrics** unless stated.
+
 
 ---
 
