@@ -30,8 +30,8 @@ This work serves as a foundation for further research on **cross-domain music re
 All examples live in **[demos/](demos/)**.  
 Our model does **not** synthesize audio; “outputs” are labels/curves (JSON/plots).
 
-- **Clip 1** → <a href="demos/clip1.mp4?raw=1">▶ Play MP4</a> · <a href="demos/clip1.wav?raw=1">WAV</a> · [Output JSON](demos/clip1_pred.json)
-- **Clip 2** → <a href="demos/clip2.mp4?raw=1">▶ Play MP4</a> · <a href="demos/clip2.wav?raw=1">WAV</a> · [Output JSON](demos/clip2_pred.json)
+- **Clip 1** → [▶ Play MP4](https://raw.githubusercontent.com/Khua0419/music-multitask-genre-emotion/main/demos/clip1.mp4) · [WAV](https://raw.githubusercontent.com/Khua0419/music-multitask-genre-emotion/main/demos/clip1.wav) · [Output JSON](demos/clip1_pred.json)
+- **Clip 2** → [▶ Play MP4](https://raw.githubusercontent.com/Khua0419/music-multitask-genre-emotion/main/demos/clip2.mp4) · [WAV](https://raw.githubusercontent.com/Khua0419/music-multitask-genre-emotion/main/demos/clip2.wav) · [Output JSON](demos/clip2_pred.json)
 
 ---
 
