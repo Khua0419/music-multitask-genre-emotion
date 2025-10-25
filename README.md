@@ -3,13 +3,6 @@
 
 **Repo:** [https://github.com/Khua0419/music-multitask-genre-emotion](https://github.com/Khua0419/music-multitask-genre-emotion)
 
-> **TL;DR**  
-We study a shared-encoder multitask model for **genre classification (GTZAN)**
-and **emotion regression (DEAM)**. Under a comparable parameter budget,
-our MTL model improves **Genre Macro-F1 by +X.X pts** and reduces **Valence/Arousal
-RMSE by Y–Z%** vs. strong single-task baselines. We release configs, scripts,
-and **listenable demos** with exact seeds for full reproducibility.
-
 This project explores **multi-task learning for music understanding**, combining **genre classification** and **emotion regression** within a single deep-learning framework.
 Instead of training two independent models, we adopt a **shared CNN encoder** that jointly learns timbral and rhythmic representations from audio spectrograms, followed by task-specific heads for **genre** (categorical prediction) and **emotion** (continuous valence–arousal estimation).
 By training on both **GTZAN** (genre) and **DEAM** (emotion) datasets, the model leverages complementary cues—genre structure often correlates with emotional tone—to improve overall generalization.
@@ -25,61 +18,7 @@ This work serves as a foundation for further research on **cross-domain music re
 - RQ2: How do backbone sharing choices and loss weight λ trade off genre vs emotion?
 - RQ3: How do segment length and augmentations affect both tasks differently?
 
-## Demos (listenable examples)
-
-All examples live in **[demos/](demos/)**.  
-Our model does **not** synthesize audio; “outputs” are labels/curves (JSON/plots).
-
-- **Clip 1** → [▶ Play MP4](https://raw.githubusercontent.com/Khua0419/music-multitask-genre-emotion/main/demos/clip1.mp4) · [WAV](https://raw.githubusercontent.com/Khua0419/music-multitask-genre-emotion/main/demos/clip1.wav) · [Output JSON](demos/clip1_pred.json)
-- **Clip 2** → [▶ Play MP4](https://raw.githubusercontent.com/Khua0419/music-multitask-genre-emotion/main/demos/clip2.mp4) · [WAV](https://raw.githubusercontent.com/Khua0419/music-multitask-genre-emotion/main/demos/clip2.wav) · [Output JSON](demos/clip2_pred.json)
-
-> **Note on demo outputs.**  
-> The JSON files in `demos/*_pred.json` are **placeholders** that illustrate the
-> output schema (top-k genre and arousal/valence statistics). This repository
-> focuses on data processing, baseline reproduction, and analysis. We did not
-> release training **checkpoints** in this submission; once checkpoints are
-> available (e.g., synced from Colab), we will replace the placeholders with
-> **true predictions**.
-
-**Failure case (clip2).**  
-Ground truth: `rock`. The model (baseline) tends to predict `country/pop` on short
-segments dominated by drums and strumming, which matches the confusion matrix
-trend. See `demos/clip2.wav` and `demos/clip2_pred.json` (placeholder schema).
-
-### Why these demos?
-These short clips are here so reviewers can **listen to the inputs** and **inspect the model outputs**
-without running the code. Our model does not synthesize audio; the “outputs” are labels/curves
-(genre top-k and arousal/valence statistics) saved as JSON/plots.
-
-### What to listen/look for
-- **Genre plausibility:** does the top-k genre match the musical cues (instrumentation, rhythm)?
-- **Arousal trend:** louder/faster segments → typically **higher** arousal.
-- **Valence trend:** brighter/happier harmony → typically **higher** valence.
-- **Failure cases:** we include at least one clip where the model is wrong or uncertain (see Notes below).
-
-> How to play: click a file link and your browser will **download or play** it directly (raw link).  
-> Clips are ≤10–20 s, 22.05 kHz mono, to keep files small.
-
-**Notes on metrics**
-- DEAM labels are min-max normalized to **[0,1]** during training; unless specified, RMSE/PCC are reported on the **scaled** space.
-- For raw-scale reporting ([1,9]), we inverse-transform predictions during evaluation.
-
-**Reproducibility pointers**
-- Audio demo files live in `demos/`. Outputs are in `demos/*_pred.json` (schema: file, genre_top3, arousal_mean, valence_mean).
-- Figures are exported to `docs/figures/` when running evaluation scripts.
-
 ---
-
-### What is ours vs. borrowed
-- **Borrowed baselines**: loaders & training loops for GTZAN / DEAM, standard
-  metrics and plotting utilities (credited in code comments).
-- **Our contributions**:
-  1) A unified pipeline for **multitask** setup (genre + arousal/valence) with
-     late-fusion features and shared backbone.
-  2) Reproducible scripts for preprocessing, evaluation, and exporting confusion
-     matrices & A/V curves.
-  3) Discussion and ablations on segment length and augmentations; cross-task
-     analysis of genre vs. emotion signals.
 
 ## 🧩 Environment
 
@@ -159,23 +98,6 @@ experiments/checkpoints/genre_last.pt
 
 #### Confusion Matrix (validation)
 ![Genre confmat](experiments/logs/genre_confmat.png)
-
-### Error analysis (Genre)
-
-From the validation confusion matrix, the most frequent confusions are:
-- **rock → country**: 8 clips
-- **hiphop → reggae**: 3 clips
-- **metal → rock**: 3 clips; **pop → rock**: 2 clips
-- **country → blues**: 2 clips; **country → jazz**: 2 clips
-
-These errors typically occur between classes that share instrumentation and rhythm
-patterns (e.g., *rock–country/metal*, *hiphop–reggae*, *jazz–blues*). Short clips
-that capture drums/strumming but limited harmonic context are especially prone to
-*rock* being predicted as *country/pop*. We include listenable demos in `demos/`
-so reviewers can compare inputs with outputs.
-
-> Label order (GTZAN alphabetical):  
-> `0=blues, 1=classical, 2=country, 3=disco, 4=hiphop, 5=jazz, 6=metal, 7=pop, 8=reggae, 9=rock`.
 
 ### 7. Inference
 **Single-file prediction (Top-k)**
