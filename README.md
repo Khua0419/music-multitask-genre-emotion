@@ -33,11 +33,6 @@ Our model does **not** synthesize audio; “outputs” are labels/curves (JSON/p
 - **Clip 1** → [▶ Play MP4](demos/clip1.mp4?raw=1) · [WAV](demos/clip1.wav?raw=1) · [Output JSON](demos/clip1_pred.json)
 - **Clip 2** → [▶ Play MP4](demos/clip2.mp4?raw=1) · [WAV](demos/clip2.wav?raw=1) · [Output JSON](demos/clip2_pred.json)
 
-*Notes*
-- If your browser still downloads instead of playing, open the link and choose **View raw**.
-- Keep clips short (≤10 s, 22.05 kHz mono) so files stay small.
-- DEAM labels are normalized to [0,1] during training; we report **scaled metrics** unless stated.
-
 ---
 
 ## 🧩 Environment
