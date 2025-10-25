@@ -163,7 +163,7 @@ This masking keeps training **end-to-end** without discarding samples.
 | Epochs / Batch | 50 / 8                                       |
 | Inference (opt)| **5-crop TTA**（Average logits / Average VA）        |
 
-### 3.7 Tools / Techniques Newly Learned
+### 3.7 Tools and Techniques Learned
 
 - Multitask training loop with **dynamic masking** for partially labeled datasets  
 - **Late-fusion** acoustic features &(Optional) Feature caching for performance optimisation  
@@ -291,7 +291,6 @@ A compact MTL system can jointly solve **genre + emotion** with competitive accu
 - Kim, Y., Lee, H., & Nam, J. (2018). Sample-level CNN architectures for music auto-tagging. IEEE T-ASLP.
 - Zhang, C., Tan, K. C., et al. (2019). Affective computing for music emotion recognition: A deep learning perspective.
 - Fernández, J., García, S., Galar, M., et al. (2018). Survey of music information retrieval systems based on deep learning.
-- Other relevant references as cited in code comments or README.
 
 ---
 
