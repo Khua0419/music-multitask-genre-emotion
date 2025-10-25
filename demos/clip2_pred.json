@@ -1,0 +1,7 @@
+{
+  "file": "clip2.wav",
+  "genre_top3": [["classical", 0.55], ["jazz", 0.27], ["pop", 0.12]],
+  "arousal_mean": 0.31,
+  "valence_mean": 0.58,
+  "note": "Placeholder; will be replaced after running inference."
+}
