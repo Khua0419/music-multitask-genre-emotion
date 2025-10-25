@@ -30,28 +30,13 @@ This work serves as a foundation for further research on **cross-domain music re
 All examples live in **[demos/](demos/)**.  
 Our model does **not** synthesize audio; “outputs” are labels/curves (JSON/plots).
 
-### Inline players
-<!-- If your mp4 names differ, change clip1.mp4 / clip2.mp4 below -->
-<video controls width="420" src="demos/clip1.mp4"></video>
-<p>
-  <a href="demos/clip1.wav">Input (WAV)</a> ·
-  <a href="demos/clip1_pred.json">Output (JSON)</a>
-</p>
+- **Clip 1** → [▶ Play MP4](demos/clip1.mp4?raw=1) · [WAV](demos/clip1.wav?raw=1) · [Output JSON](demos/clip1_pred.json)
+- **Clip 2** → [▶ Play MP4](demos/clip2.mp4?raw=1) · [WAV](demos/clip2.wav?raw=1) · [Output JSON](demos/clip2_pred.json)
 
-<video controls width="420" src="demos/clip2.mp4"></video>
-<p>
-  <a href="demos/clip2.wav">Input (WAV)</a> ·
-  <a href="demos/clip2_pred.json">Output (JSON)</a>
-</p>
-
-### Direct links
-- Input:  [clip1.wav](demos/clip1.wav) · Output: [clip1_pred.json](demos/clip1_pred.json)  
-- Input:  [clip2.wav](demos/clip2.wav) · Output: [clip2_pred.json](demos/clip2_pred.json)
-
-*Notes*  
-- If the inline players don’t appear on your device, click a file and then **View raw** to play.  
-- Keep clips short (≤10 s, 22.05 kHz mono) so files stay small.  
-- DEAM labels are normalized to [0,1] during training; we report **scaled metrics** unless otherwise stated.
+*Notes*
+- If your browser still downloads instead of playing, open the link and choose **View raw**.
+- Keep clips short (≤10 s, 22.05 kHz mono) so files stay small.
+- DEAM labels are normalized to [0,1] during training; we report **scaled metrics** unless stated.
 
 ---
 
