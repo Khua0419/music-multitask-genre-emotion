@@ -33,6 +33,19 @@ Our model does **not** synthesize audio; “outputs” are labels/curves (JSON/p
 - **Clip 1** → [▶ Play MP4](https://raw.githubusercontent.com/Khua0419/music-multitask-genre-emotion/main/demos/clip1.mp4) · [WAV](https://raw.githubusercontent.com/Khua0419/music-multitask-genre-emotion/main/demos/clip1.wav) · [Output JSON](demos/clip1_pred.json)
 - **Clip 2** → [▶ Play MP4](https://raw.githubusercontent.com/Khua0419/music-multitask-genre-emotion/main/demos/clip2.mp4) · [WAV](https://raw.githubusercontent.com/Khua0419/music-multitask-genre-emotion/main/demos/clip2.wav) · [Output JSON](demos/clip2_pred.json)
 
+> **Note on demo outputs.**  
+> The JSON files in `demos/*_pred.json` are **placeholders** that illustrate the
+> output schema (top-k genre and arousal/valence statistics). This repository
+> focuses on data processing, baseline reproduction, and analysis. We did not
+> release training **checkpoints** in this submission; once checkpoints are
+> available (e.g., synced from Colab), we will replace the placeholders with
+> **true predictions**.
+
+**Failure case (clip2).**  
+Ground truth: `rock`. The model (baseline) tends to predict `country/pop` on short
+segments dominated by drums and strumming, which matches the confusion matrix
+trend. See `demos/clip2.wav` and `demos/clip2_pred.json` (placeholder schema).
+
 ### Why these demos?
 These short clips are here so reviewers can **listen to the inputs** and **inspect the model outputs**
 without running the code. Our model does not synthesize audio; the “outputs” are labels/curves
@@ -56,6 +69,17 @@ without running the code. Our model does not synthesize audio; the “outputs”
 - Figures are exported to `docs/figures/` when running evaluation scripts.
 
 ---
+
+### What is ours vs. borrowed
+- **Borrowed baselines**: loaders & training loops for GTZAN / DEAM, standard
+  metrics and plotting utilities (credited in code comments).
+- **Our contributions**:
+  1) A unified pipeline for **multitask** setup (genre + arousal/valence) with
+     late-fusion features and shared backbone.
+  2) Reproducible scripts for preprocessing, evaluation, and exporting confusion
+     matrices & A/V curves.
+  3) Discussion and ablations on segment length and augmentations; cross-task
+     analysis of genre vs. emotion signals.
 
 ## 🧩 Environment
 
@@ -145,17 +169,13 @@ From the validation confusion matrix, the most frequent confusions are:
 - **country → blues**: 2 clips; **country → jazz**: 2 clips
 
 These errors typically occur between classes that share instrumentation and rhythm
-patterns (e.g., *rock–country/metal*, *hiphop–reggae*, *jazz–blues*). We provide
-short listenable clips in `demos/` so reviewers can compare the input audio with
-the predicted labels (see **Demos**).
-> Label order used (GTZAN alphabetical):  
-> `0=blues, 1=classical, 2=country, 3=disco, 4=hiphop, 5=jazz, 6=metal, 7=pop, 8=reggae, 9=rock`.
+patterns (e.g., *rock–country/metal*, *hiphop–reggae*, *jazz–blues*). Short clips
+that capture drums/strumming but limited harmonic context are especially prone to
+*rock* being predicted as *country/pop*. We include listenable demos in `demos/`
+so reviewers can compare inputs with outputs.
 
-**Failure case (clip2)**  
-Ground truth: `rock`. The model predicts `pop/country` with higher confidence.
-This matches our confusion matrix where rock is often confused with country/pop
-on short segments that capture drums and strumming but little harmonic context.
-See `demos/clip2.wav` and `demos/clip2_pred.json`.
+> Label order (GTZAN alphabetical):  
+> `0=blues, 1=classical, 2=country, 3=disco, 4=hiphop, 5=jazz, 6=metal, 7=pop, 8=reggae, 9=rock`.
 
 ### 7. Inference
 **Single-file prediction (Top-k)**
