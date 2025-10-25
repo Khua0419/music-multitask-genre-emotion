@@ -337,3 +337,4 @@ python scripts/predict_mtl.py \
 
 > **Note:** All code, dataset splits, and configuration files are derived from open-source academic benchmarks.  
 > Please cite the corresponding datasets (GTZAN, DEAM) when reusing or publishing derivative works.
+> Reproducibility: seed=42, bs=8, lr=5e-4, epochs=50, λg=1.5, λe=1.0
