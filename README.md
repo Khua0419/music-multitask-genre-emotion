@@ -34,7 +34,7 @@ Our model does **not** synthesize audio; “outputs” are labels/curves (JSON/p
 - Input:  [clip2.wav](demos/clip2.wav) · Output: [clip2_pred.json](demos/clip2_pred.json)
 
 *Notes*:
-- Short WAVs (≤10s, 22.05 kHz mono, ≤10 MB) to avoid LFS and load issues.
+- Short WAVs (≤20s, 22.05 kHz mono, ≤10 MB) to avoid LFS and load issues.
 - DEAM labels are normalized to [0,1] during training; we report **scaled metrics** unless stated.
 
 
