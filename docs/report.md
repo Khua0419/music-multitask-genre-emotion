@@ -98,8 +98,7 @@ To ensure fixed-length batches, we **center-crop or right-pad** to `TARGET_FRAME
 
 ### 3.4 Model Architecture
 
-Our architecture design is inspired by standard CNN-based MIR encoders (Choi et al., 2017)  
-and multitask frameworks used in general audio understanding (Zhang et al., 2019).
+Our architecture design is inspired by standard CNN-based MIR encoders (Choi et al., 2017) and multitask frameworks used in general audio understanding (Zhang et al., 2019).
 
 A **shared CNN encoder** extracts time–frequency features for both tasks, followed by two task-specific heads:
 - **Genre head**: 10-way linear classifier with **softmax**  
@@ -122,8 +121,7 @@ Input Audio →│ CNN Encoder │→ Shared Features
 
 ### 3.5 Multitask Loss and Missing-Label Masking
 
-Loss masking for partially labeled data is adapted from prior multitask strategies (Caruana, 1997),  
-allowing end-to-end training without discarding incomplete samples.
+Loss masking for partially labeled data is adapted from prior multitask strategies (Caruana, 1997), allowing end-to-end training without discarding incomplete samples.
 
 The joint objective combines **cross-entropy** for genre and **MSE** for emotion, with controllable weights:
 
@@ -223,10 +221,8 @@ score = (1 - F1) + mean(RMSE_V, RMSE_A)
 
 ### 5.1 Discussion
 
-The results align with prior findings that shared encoders can capture cross-task acoustic cues  
-to improve generalization (Caruana, 1997; Zhang et al., 2019).  
-Compared to earlier CNN baselines (Choi et al., 2017), our model achieves comparable accuracy  
-while improving emotional stability similar to DEAM-focused regression models (Aljanaki et al., 2017).
+The results align with prior findings that shared encoders can capture cross-task acoustic cues to improve generalization (Caruana, 1997; Zhang et al., 2019).  
+Compared to earlier CNN baselines (Choi et al., 2017), our model achieves comparable accuracy while improving emotional stability similar to DEAM-focused regression models (Aljanaki et al., 2017).
 
 **Positive transfer:**  
 Shared features between related tasks improve both classification and regression.  
