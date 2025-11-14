@@ -5,7 +5,7 @@ import json
 train_src = Path("data/lists/train_items.json")
 val_src   = Path("data/lists/val_items.json")
 if not train_src.exists() or not val_src.exists():
-    raise SystemExit("请先运行: python scripts/make_tiny_dummy.py")
+    raise SystemExit("Please run first: python scripts/make_tiny_dummy.py")
 
 def load_fix(p):
     items = json.loads(p.read_text(encoding="utf-8"))
