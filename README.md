@@ -30,6 +30,18 @@ conda env create -f environment.yml && conda activate mtl-audio
 ```
 Data and checkpoints are git-ignored (data/**, experiments/checkpoints/**).
 
+## 🎥 Demo Video
+
+A full screen-recorded demonstration of the project workflow — including dataset
+preparation, multi-task training pipeline, and inference results — is available
+in the GitHub Release below:
+
+👉 **Download / View Video:**  
+https://github.com/Khua0419/music-multitask-genre-emotion/releases/latest
+
+The video is intended to complement the report by providing a visual overview of
+the training and evaluation process.
+
 ## 🧠 Genre-Only Baseline (GTZAN)
 
 ### 1. Overview
