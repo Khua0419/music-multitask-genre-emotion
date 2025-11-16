@@ -3,7 +3,8 @@
 **Author:** Kejia Huang  
 **Environment:** Anaconda (mtl-audio)  
 **Repository:** [music-multitask-genre-emotion](https://github.com/Khua0419/music-multitask-genre-emotion)  
-**Date:** October 2025  
+**Access the video here:**  https://github.com/Khua0419/music-multitask-genre-emotion/releases/latest   
+**Date:** Nov 2025  
 
 ---
 
